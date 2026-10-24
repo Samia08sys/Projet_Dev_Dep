@@ -42,5 +42,6 @@ sentiment-app/
 
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
-| Membre A | [Nom 1] | [@login] | |
-| Membre B | [Nom 2] | [@login] | |
+| Membre A | Wissal Halimi | Wissal Halimi | |
+| Membre B | Samia Jrida | Samia08sys | |
+| Membre C | Hajar Nabaoui | Hajarnabaoui12 | |
