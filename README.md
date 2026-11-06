@@ -44,4 +44,4 @@ sentiment-app/
 | --- | --- | --- | --- |
 | Membre A | Wissal Halimi | Wissal Halimi | Clonage du dépôt, configuration Python et contribution au README Membre A|
 | Membre B | Samia Jrida | Samia08sys | Clonage du dépôt, configuration Python et contribution au README  |
-| Membre C | Hajar Nabaoui | Hajarnabaoui12 | |
+| Membre C | Hajar Nabaoui | Hajarnabaoui12 | Clonage du dépôt, configuration Python et contribution au README |
