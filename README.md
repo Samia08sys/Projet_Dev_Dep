@@ -42,6 +42,6 @@ sentiment-app/
 
 | Rôle | Nom | Identifiant GitHub | Travail de la semaine 1 |
 | --- | --- | --- | --- |
-| Membre A | Wissal Halimi | Wissal Halimi | Clonage du dépôt, configuration Python et contribution au README Membre A|
+| Membre A | Wissal Halimi | Wissal Halimi | Clonage du dépôt, configuration Python et contribution au README |
 | Membre B | Samia Jrida | Samia08sys | Clonage du dépôt, configuration Python et contribution au README  |
 | Membre C | Hajar Nabaoui | Hajarnabaoui12 | Clonage du dépôt, configuration Python et contribution au README |
