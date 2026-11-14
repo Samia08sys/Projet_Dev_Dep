@@ -17,5 +17,5 @@ text,attendu,difficulte,erreur_connue
 "Ce produit n'est vraiment pas satisfaisant, je le deconseille.",NEGATIVE,Negation,"erreur franche : negation complexe"
 "Je voulais aimer cet article, mais il est inutilisable.",NEGATIVE,Contraste,"erreur franche : contraste ignore"
 "Le produit fonctionne, mais le service apres-vente est catastrophique.",NEGATIVE,Avis mitige,"erreur franche : avis mitige"
-"Bravo pour cette livraison de trois semaines de retard, quelle efficacite !",NEGATIVE,Ironie,"erreur franche : ironie non detectee"
+"Bravo pour cette livraison de trois semaines de retard, quelle efficacite !",NEGATIVE,Ironie,
 "Malgre une belle presentation, le produit est defectueux et le vendeur refuse de rembourser.",NEGATIVE,Contraste,"erreur franche : contraste ignore"
