@@ -65,6 +65,11 @@ def predire_lot(session: httpx.Client, textes: list[str]) -> list[Reponse]:
 
 
 def resumer(reponses: list[Reponse]) -> dict[str, int]:
-    """Nombre d'avis par verdict ; les refus et les erreurs sont comptés à part."""
-    compte = Counter(r.label if r.ok else "REFUS OU ERREUR" for r in reponses)
+    """Nombre d'avis par verdict ; les erreurs (refus, API injoignable) sont comptées à part."""
+    compte = Counter()
+    for r in reponses:
+        if r.ok and r.label:
+            compte[r.label] += 1
+        else:
+            compte["REFUS OU ERREUR"] += 1
     return dict(sorted(compte.items()))
