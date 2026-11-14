@@ -38,3 +38,6 @@ htmlcov/
 
 # TP5
 !data/avis_exemple.csv
+
+src/sentiment_app/modele/*.joblib
+docs/livrable-tp4.txt
