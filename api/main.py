@@ -33,7 +33,6 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# CORS : indispensable pour un frontend web (TP5). En production, lister les domaines autorisés.
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -57,31 +56,28 @@ async def root():
 
 @app.get("/health", response_model=HealthResponse, summary="Santé de l'API")
 async def health_check():
-    """Répond 200 si le modèle est chargé, 503 sinon. Appelé par les outils de déploiement (TP4)."""
     return {"status": "OK", "model": _classifier().model_name}
 
 
 @app.post("/predict", response_model=PredictResponse, summary="Classifier un texte")
 async def predict(request: PredictRequest):
-    """Renvoie le sentiment (POSITIVE ou NEGATIVE) et la confiance.
-
-    - 422 : texte vide ou trop long (Pydantic), ou refusé par le modèle
-    - 503 : modèle non chargé
-    - 500 : erreur inattendue (journalisée côté serveur, jamais renvoyée au client)
-    """
     clf = _classifier()
     try:
         result = clf.predict(request.text)
     except ValueError as e:
-    	raise HTTPException(status_code=422, detail=str(e)) from e
+        # On distingue le texte vide (422) des pannes internes (500)
+        if "texte vide" in str(e):
+            raise HTTPException(status_code=422, detail=str(e)) from e
+        else:
+            logger.exception("Erreur lors de la prédiction (ValueError inattendue)")
+            raise HTTPException(status_code=500, detail="Erreur interne du serveur") from None
     except Exception:
-    	logger.exception("Erreur lors de la prédiction")
-    	raise HTTPException(status_code=500, detail="Erreur interne du serveur") from None
+        logger.exception("Erreur lors de la prédiction")
+        raise HTTPException(status_code=500, detail="Erreur interne du serveur") from None
     logger.info("predict: %r -> %s (%.2f)", request.text[:50], result["label"], result["score"])
     return result
 
 
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run("api.main:app", host="0.0.0.0", port=8000, log_level="info")
