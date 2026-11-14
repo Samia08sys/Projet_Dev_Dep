@@ -1,21 +1,21 @@
 text,attendu,difficulte,erreur_connue
 "Produit excellent, livraison rapide et service impeccable.",POSITIVE,,
 "Tres satisfait de mon achat, tout fonctionne parfaitement.",POSITIVE,,
-Le vendeur est professionnel et le remboursement a ete rapide.,POSITIVE,,
+"Le vendeur est professionnel et le remboursement a ete rapide.",POSITIVE,,
 "Emballage soigne, produit conforme et livraison dans les delais.",POSITIVE,,
 "Je recommande ce produit sans hesitation, excellente qualite.",POSITIVE,,
-"Ce produit est loin d'etre mauvais, il fonctionne tres bien.",POSITIVE,Negation,
+"Ce produit est loin d'etre mauvais, il fonctionne tres bien.",POSITIVE,Negation,"erreur franche : negation complexe"
 "Je pensais etre decu, mais finalement la qualite est excellente.",POSITIVE,Contraste,
 "Pas parfait sur tous les details, mais le service reste remarquable.",POSITIVE,Avis mitige,
 "Enfin un vendeur qui respecte ses engagements, je suis ravi.",POSITIVE,Ironie apparente,
 "Apres plusieurs problemes au debut, tout a ete regle et je suis satisfait.",POSITIVE,Contexte contradictoire,
 "Commande jamais recue et aucun remboursement, experience catastrophique.",NEGATIVE,,
-"Produit casse des la reception, je suis extremement decu.",NEGATIVE,,
+"Produit casse des la reception, je suis extremement decu.",NEGATIVE,,"erreur franche : vocabulaire non reconnu"
 "Service client injoignable, aucune reponse a mes messages.",NEGATIVE,,
-Livraison tres en retard et emballage completement abime.,NEGATIVE,,
-"Qualite mediocre, prix excessif, je regrette cet achat.",NEGATIVE,,
-"Ce produit n'est vraiment pas satisfaisant, je le deconseille.",NEGATIVE,Negation,
-"Je voulais aimer cet article, mais il est inutilisable.",NEGATIVE,Contraste,
-"Le produit fonctionne, mais le service apres-vente est catastrophique.",NEGATIVE,Avis mitige,
-"Bravo pour cette livraison de trois semaines de retard, quelle efficacite !",NEGATIVE,Ironie,
-"Malgre une belle presentation, le produit est defectueux et le vendeur refuse de rembourser.",NEGATIVE,Contraste,
+"Livraison tres en retard et emballage completement abime.",NEGATIVE,,"erreur franche : ton ironique"
+"Qualite mediocre, prix excessif, je regrette cet achat.",NEGATIVE,,"erreur franche : mots non reconnus"
+"Ce produit n'est vraiment pas satisfaisant, je le deconseille.",NEGATIVE,Negation,"erreur franche : negation complexe"
+"Je voulais aimer cet article, mais il est inutilisable.",NEGATIVE,Contraste,"erreur franche : contraste ignore"
+"Le produit fonctionne, mais le service apres-vente est catastrophique.",NEGATIVE,Avis mitige,"erreur franche : avis mitige"
+"Bravo pour cette livraison de trois semaines de retard, quelle efficacite !",NEGATIVE,Ironie,"erreur franche : ironie non detectee"
+"Malgre une belle presentation, le produit est defectueux et le vendeur refuse de rembourser.",NEGATIVE,Contraste,"erreur franche : contraste ignore"
