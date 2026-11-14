@@ -11,6 +11,8 @@ sys.path.insert(0, str(RACINE / "src"))
 from predict import charger_modele  # noqa: E402
 from predict import predict as _predict  # noqa: E402
 
+SEUIL_ABSTENTION = 0.60
+
 
 class SentimentClassifier:
     """Enveloppe du modèle TP2 avec l'interface attendue par l'API."""
@@ -21,9 +23,17 @@ class SentimentClassifier:
         charger_modele()  # échoue immédiatement si le joblib manque : on ne démarre pas sans modèle
 
     def predict(self, text: str) -> dict:
-        """Renvoie {'label': 'POSITIVE'|'NEGATIVE', 'score': float, 'text': aperçu}."""
+        """Renvoie {'label': 'POSITIVE'|'NEGATIVE'|'INDETERMINE', 'score': float, 'text': aperçu}."""
         r = _predict(text)  # lève ValueError si le texte est vide
-        return {"label": r["label"].upper(), "score": r["score"], "text": text[:100]}
+        
+        label = r["label"].upper()
+        score = r["score"]
+        
+        # Logique d'abstention du TP4
+        if score < SEUIL_ABSTENTION:
+            label = "INDETERMINE"
+            
+        return {"label": label, "score": score, "text": text[:100]}
 
 
 def load_model() -> SentimentClassifier:
